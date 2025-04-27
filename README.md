@@ -17,7 +17,7 @@ Para implementar esto, utilizamos un analizador sintáctico **LL(1)**, que proce
 
 ## Modelo Matemático
 
-El análisis y la implementación de la gramática se basan en conceptos fundamentales de la teoría de lenguajes formales y autómatas. La gramática que hemos construido sigue los principios de una **gramática libre de contexto** (CFG), que es una de las clases más poderosas de gramáticas, según la jerarquía de Chomsky. Esta jerarquía se clasifica en cuatro niveles:
+El análisis y la implementación de la gramática se basan en conceptos fundamentales de la teoría de lenguajes formales y autómatas. La gramática que hemos construido sigue los principios de una **gramática libre de contexto** (CFG) según la jerarquía de Chomsky. Esta jerarquía se clasifica en cuatro niveles:
 
 1. **Lenguajes Regulares (Nivel 3)**: Generados por gramáticas regulares.
 2. **Lenguajes Libres de Contexto (Nivel 2)**: Generados por gramáticas libres de contexto, como la que estamos usando en este proyecto.
@@ -27,8 +27,7 @@ El análisis y la implementación de la gramática se basan en conceptos fundame
 En nuestro caso, estamos utilizando una **gramática libre de contexto** (Chomsky Nivel 2) para modelar el idioma noruego, lo cual implica que nuestras reglas de producción siguen la forma:
 
 - **A → αBβ**  
-  Donde **A** es un no terminal, y **α** y **β** son secuencias de terminales y no terminales. La producción asegura que las reglas sean aplicables en un contexto no restringido, permitiendo una amplia variedad de estructuras.
-
+  Donde **A** es un no terminal, y **α** y **β** son secuencias de terminales y no terminales. 
 
 ## Modelos de la Gramática
 
@@ -40,8 +39,7 @@ En esta fase, definí símbolos no terminales abstractos para representar estruc
 - **Subordinadas**: Inician con conjunción (`Konj`) + `Setning`.
 - **Listas coordinadas**: Uso de `Konj` y comas (`Skilletegn`).
 
-**Imagen 1**: Diagrama de la Gramática Inicial  
-_(Jerarquía de reglas: `S → Setning Setning_opt`, `Setning → HovedSetning Skilletegn_opt`, `HovedSetning → Subjekt Predikat`)_
+![image](https://github.com/user-attachments/assets/aef09a47-ffcd-4eba-800c-c3ea51f197fc)
 
 
 ## 2. Eliminación de Ambigüedad
@@ -62,9 +60,9 @@ La ambigüedad se resolvió reestructurando reglas con múltiples interpretacion
 
 - **PPDel → PP | ε**  
   Para las preposiciones, se permite tanto la presencia como la ausencia de una preposición, lo que otorga mayor flexibilidad sintáctica al procesar oraciones preposicionales.
+  
+![image](https://github.com/user-attachments/assets/6253321b-dd89-4e07-b0fe-c89f5e6521e9)
 
-**Imagen 2**: **Gramática sin Ambigüedad**  
-_(Flujo de `EnkelSubjekt` con reglas jerárquicas: `EnkelSubjekt → Art AdjE Substantiv | Art Substantiv`)_
 
 
 ### 3. Eliminación de Recursión Izquierda
@@ -76,11 +74,14 @@ usan recursión derecha, lo cual garantiza compatibilidad con **LL(1)** y evita 
 `A → βA'`  
 `A' → αA' | ε`
 
-**Imagen 3**: Estructura de Recursión Derecha  
-_(Diagrama de `Subjekt_opt` mostrando derivaciones anidadas sin bucles infinitos)_
+![image](https://github.com/user-attachments/assets/dcd4d27c-7c57-4b5e-abf9-907140efb20d)
+
 
 # Implementacion 
-### Aqui se mostrara la implementación de la gramatica final 
+![image](https://github.com/user-attachments/assets/1878e736-3171-4267-b672-1efcf7507704)
+
+
+
 
 
 ## Casos de Prueba
@@ -89,26 +90,31 @@ _(Diagrama de `Subjekt_opt` mostrando derivaciones anidadas sin bucles infinitos
 
 - **Oración Simple:**
 
-  **Entrada:** `"Jeg spiser et eple."`  
-  **Imagen 4**: Árbol de análisis sintáctico generado.
+  **Entrada:** `"Jeg spiser en eple."`  
+  ![image](https://github.com/user-attachments/assets/0f19e2d2-53cf-48bc-9da3-9aedd750220a)
 
-- **Subordinada con Conjunción:**
 
-  **Entrada:** `"Fordi det regner, blir jeg hjemme."`
+- **Oracion conjunta de dos sujetos**
+
+  **Entrada:** `"en gamle hund og katt elsker solskinnet"`
+  ![image](https://github.com/user-attachments/assets/9cf78af6-b38f-4a7e-849f-c7c09946df91)
+
+ - **Oracion conjunta**
+   **Entrada:** `"en gamle hund og katt elsker solskinnet raskt og alltid , men hund hater varmen sakte ."`
+   ![image](https://github.com/user-attachments/assets/59b1a2f4-d95b-44dc-aaad-240d8ee4f9ec)
+
 
 ### Ejemplos Inválidos
 
-- **Falta Artículo:**
-
-  **Entrada:** `"Gutt løper fort."`  
-  → **Error:** `EnkelSubjekt` requiere `Art` antes de `Substantiv`.
+-nkelSubjekt` requiere `Art` antes de `Substantiv`.
 
 - **Orden Incorrecto:**
 
   **Entrada:** `"Spiser jeg mat."`  
   → **Error:** `Predikat` no puede preceder a `Subjekt`.
+  ![image](https://github.com/user-attachments/assets/917b7eac-f88c-47a7-93ac-675b0044fb9c)
 
-**Imagen 5**: Mensaje de error para una entrada inválida.
+
 
 
 ## Complejidad
