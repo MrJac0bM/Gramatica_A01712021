@@ -81,6 +81,16 @@ usan recursión derecha, lo cual garantiza compatibilidad con **LL(1)** y evita 
 ![image](https://github.com/user-attachments/assets/1878e736-3171-4267-b672-1efcf7507704)
 
 
+# Tablas de First, Follow y Parsing
+
+## Descripción
+
+Se generaron las siguientes tablas basadas en la gramática libre de contexto desarrollada:
+
+- **Tabla First y Follow**: Muestra los conjuntos First y Follow de todos los no terminales, utilizados para guiar la construcción del parser LL(1).
+- **Tabla de Parsing LL(1)**: Relaciona pares (no terminal, terminal) con las producciones aplicables, facilitando el proceso de análisis sintáctico.
+
+Ambas tablas se encuentran disponibles en archivos `.xlsx` anexos en este repositorio.
 
 
 
