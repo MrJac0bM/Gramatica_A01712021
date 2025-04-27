@@ -12,7 +12,7 @@ Las gramáticas son fundamentales en los métodos computacionales para el proces
 
 > **Nota**: Todas las oraciones deben terminar con un signo de puntuación (p.ej., `.`).
 
-Para implementar esto, utilizamos un analizador sintáctico **LL(1)**, que procesa la entrada de izquierda a derecha con un token de anticipación, evitando retrocesos ([GeeksforGeeks, 2023](https://www.geeksforgeeks.org/)).
+Para implementar esto, utilizamos un analizador sintáctico **LL(1)**, que procesa la entrada de izquierda a derecha con un token de anticipación, evitando retrocesos.
 
 
 ## Modelo Matemático
@@ -130,5 +130,9 @@ La gramática es **libre de contexto** (Chomsky Nivel 2) con:
 - **Terminales:** Palabras noruegas y signos de puntuación.
 - **Producciones:** 100% libres de ambigüedad y recursión problemática.
 
+## Fuentes 
+- Sipser, M. (2013). Introduction to the Theory of Computation (3rd ed.). Cengage Learning.
 
+- Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2007). Compilers: Principles, Techniques, and Tools (2nd ed.). Addison-Wesley.
 
+- Jurafsky, D., & Martin, J. H. (2009). Speech and Language Processing (2nd ed.). Prentice Hall.
