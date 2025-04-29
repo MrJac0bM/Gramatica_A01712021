@@ -120,7 +120,7 @@ Ambas tablas se encuentran disponibles en archivos `.xlsx` anexos en este reposi
 - **Orden Incorrecto:**
 
   **Entrada:** `"Spiser jeg mat."`  
-  → **Error:** `Predikat` no puede preceder a `Subjekt`.
+  → **Error:** En noruego, el orden típico de la oración es Sujeto + Verbo + Objeto. Aquí, el verbo "spiser" aparece antes del sujeto "jeg", lo cual es incorrecto en una oración afirmativa.
   ![image](https://github.com/user-attachments/assets/917b7eac-f88c-47a7-93ac-675b0044fb9c)
 
 
