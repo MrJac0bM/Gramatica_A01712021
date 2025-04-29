@@ -1,23 +1,23 @@
 S -> Setning Setning_opt
-Setning_opt -> Konj Setning Setning_opt | 
+Setning_opt -> Konj Setning Setning_opt | ε
 Setning -> HovedSetning Skilletegn_opt
-Skilletegn_opt -> Skilletegn | 
+Skilletegn_opt -> Skilletegn | ε
 HovedSetning -> Subjekt Predikat
 Subjekt -> EnkelSubjekt Subjekt_opt
-Subjekt_opt -> Konj Subjekt Subjekt_opt | 
+Subjekt_opt -> Konj Subjekt Subjekt_opt | ε
 EnkelSubjekt -> Pronomen | Art Substantiv | Substantiv | Art DetN | Art AdjE Substantiv | AdjE Substantiv 
 Predikat -> Verb ObjektDel AdverbDel PPDel
-ObjektDel -> Objekt | 
-AdverbDel -> AdverbE | 
-PPDel -> PP | 
+ObjektDel -> Objekt | ε
+AdverbDel -> AdverbE | ε
+PPDel -> PP | ε
 Objekt -> EnkelObjekt Objekt_opt
-Objekt_opt -> Konj Objekt Objekt_opt | 
-EnkelObjekt -> Substantiv | Art Substantiv | Art AdjE Substantiv | 
+Objekt_opt -> Konj Objekt Objekt_opt | ε
+EnkelObjekt -> Substantiv | Art Substantiv | Art AdjE Substantiv 
 PP -> Prep EnkelSubjekt
 AdjE -> Adj AdjE_opt
-AdjE_opt -> Konj AdjE | 
+AdjE_opt -> Konj AdjE | ε
 AdverbE -> Adv AdverbE_opt
-AdverbE_opt -> Konj AdverbE | 
+AdverbE_opt -> Konj AdverbE | ε
 
 Pronomen -> "jeg" | "du" | "han" | "hun" | "vi" | "dere" | "de" | "meg" | "deg" | "ham" | "henne" | "det" | "oss" | "dere" | "dem"
 Art -> "en" | "et" | "den" | "det" | "ei" | "et"
