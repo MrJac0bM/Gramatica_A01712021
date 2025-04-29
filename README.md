@@ -81,7 +81,6 @@ usan recursión derecha, lo cual garantiza compatibilidad con **LL(1)** y evita 
 ![image](https://github.com/user-attachments/assets/1878e736-3171-4267-b672-1efcf7507704)
 
 
-# Tablas de First, Follow y Parsing
 
 ## Descripción
 
