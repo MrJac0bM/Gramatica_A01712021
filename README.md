@@ -99,7 +99,7 @@ Ambas tablas se encuentran disponibles en archivos `.xlsx` anexos en este reposi
 
 - **Oración Simple:**
 
-  **Entrada:** `"Jeg spiser en eple."`  
+  **Entrada:** `"jeg spiser en eple."`  
   ![image](https://github.com/user-attachments/assets/0f19e2d2-53cf-48bc-9da3-9aedd750220a)
 
 
