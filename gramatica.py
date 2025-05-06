@@ -34,7 +34,7 @@ Adv -> "fort" | "sakte" | "nøye" | "alltid" | "aldri" | "lykkelig" | "kanskje" 
 Prep -> "i" | "på" | "med" | "til" | "under" | "over" | "ved" | "om" | "mellom" | "bak" | "foran" | "uten" | "etter" | "før" | "rundt" | "gjennom" | "langs" | "hos" | "mot"
 Konj -> "og" | "men" | "fordi" | "eller" | "når" | "hvis" | "at" | "selv om" | "mens" | "derfor" | "så" | "enten" | "både" | "dessuten" | "likevel" | "som"
 Skilletegn -> "." | "?" | "!" | "..." | "," | ":" | ";"
-""")  # Fin de la definición de la gramática
+""")  
 
 # Creamos un parser con la gramática definida usando ChartParser
 parser = nltk.ChartParser(gramatica)
