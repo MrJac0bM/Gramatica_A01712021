@@ -1,6 +1,7 @@
 import nltk
 from nltk import CFG
 
+# Definimos una gramática libre de contexto (CFG) en noruego que describe la estructura de oraciones compuestas
 gramatica = CFG.fromstring("""
 S -> Setning Setning_opt
 Setning_opt -> Konj Setning Setning_opt | 
@@ -33,23 +34,22 @@ Adv -> "fort" | "sakte" | "nøye" | "alltid" | "aldri" | "lykkelig" | "kanskje" 
 Prep -> "i" | "på" | "med" | "til" | "under" | "over" | "ved" | "om" | "mellom" | "bak" | "foran" | "uten" | "etter" | "før" | "rundt" | "gjennom" | "langs" | "hos" | "mot"
 Konj -> "og" | "men" | "fordi" | "eller" | "når" | "hvis" | "at" | "selv om" | "mens" | "derfor" | "så" | "enten" | "både" | "dessuten" | "likevel" | "som"
 Skilletegn -> "." | "?" | "!" | "..." | "," | ":" | ";"
-""")
+""")  # Fin de la definición de la gramática
 
+# Creamos un parser con la gramática definida usando ChartParser
 parser = nltk.ChartParser(gramatica)
+
+# Tokenizamos una oración de prueba que contiene conjunciones, adjetivos, objetos y adverbios
 oracion = "en gamle hund og katt elsker solskinnet raskt og alltid , men hund hater varmen sakte .".split()
 
-
-
-
-
-
-
+# Parseamos la oración para generar todos los árboles sintácticos posibles
 trees = list(parser.parse(oracion))
 
+# Mostramos los árboles generados o informamos si no se pudo generar ninguno
 if trees:
     print(f"Árboles generados: {len(trees)}")
     for i, tree in enumerate(trees, 1):
         print(f"\nÁrbol {i}:")
-        tree.pretty_print()
+        tree.pretty_print()  # Imprime el árbol sintáctico de manera visual
 else:
     print("No se generaron árboles.")
