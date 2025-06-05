@@ -123,7 +123,8 @@ Ambas tablas se encuentran disponibles en archivos `.xlsx` anexos en este reposi
   → **Error:** La gramática implementada no tolera Oraciones con Mayúsculas.
   ![image](https://github.com/user-attachments/assets/917b7eac-f88c-47a7-93ac-675b0044fb9c)
 
-  **Entrada:** `"jeg spiser en eple."`  
+  **Entrada:** `"jeg spiser en eple."`
+  → **Error:** La gramática implementada no tolera Oraciones con Mayúsculas.
   
 
 
